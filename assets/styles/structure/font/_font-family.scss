@@ -1,0 +1,9 @@
+@use "../../configs/font-family" as d;
+@use "../../utils/mixins" as mn;
+
+/* ========== font-family ========== */
+
+$abb: font-family;
+$att: font-family;
+
+@include mn.GetClassNames($abb, $att, d.$obj);

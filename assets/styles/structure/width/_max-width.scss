@@ -1,0 +1,15 @@
+@use ".data" as d;
+@use "../../utils/mixins" as mn;
+
+/* ========== max-width ========== */
+
+$abb: max-width;
+$att: max-width;
+
+@include mn.GetClassNames($abb, $att, d.$obj);
+
+// Массив доп. значений
+$ar: [];
+@if ($ar != []) {
+  @include mn.GetClassNames($abb, $att, $ar)
+}

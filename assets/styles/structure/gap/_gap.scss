@@ -1,0 +1,18 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== gap ========== */
+
+$abb: gap;
+$att: gap;
+
+$step: 2;
+$from: 0;
+$through: 100;
+
+@include mn.GetClassNamesByStep($abb, $att, $step, $from, $through);
+
+// Массив доп. значений, не вписывающихся в шаг
+$ar: [];
+@if ($ar != []) {
+  @include mn.GetClassNames($abb, $att, $ar)
+}

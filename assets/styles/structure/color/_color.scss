@@ -1,0 +1,9 @@
+@use "../../configs/colors" as d;
+@use "../../utils/mixins" as mn;
+
+/* ========== color ========== */
+
+$abb: color;
+$att: color;
+
+@include mn.GetClassNames($abb, $att, d.$obj);

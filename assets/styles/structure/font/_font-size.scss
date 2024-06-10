@@ -1,0 +1,18 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== font-size ========== */
+
+$abb: font-size;
+$att: font-size;
+
+$step: 2;
+$from: 0;
+$through: 100;
+
+@include mn.GetClassNamesByStep($abb, $att, $step, $from, $through);
+
+// Массив доп. значений, не вписывающихся в шаг
+$ar: [];
+@if ($ar != []) {
+  @include mn.GetClassNames($abb, $att, $ar)
+}

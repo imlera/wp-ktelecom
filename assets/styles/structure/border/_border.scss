@@ -1,0 +1,15 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== border-style ========== */
+
+$abb: border;
+$att: border;
+$ar: [1, 2];
+
+@include mn.GetClassNames($abb, $att, $ar);
+
+$ar_abb: [top, bottom, left, right];
+@each $arv in $ar_abb {
+  $arv: border-#{ $arv };
+  @include mn.GetClassNames($arv, $att, $ar);
+}

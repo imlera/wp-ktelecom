@@ -1,0 +1,21 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== text-transform ========== */
+
+$abb: text-transform;
+$att: text-transform;
+$obj: (
+        none: none,
+        capitalize: capitalize,
+        uppercase: uppercase,
+        lowercase: lowercase,
+        full-width: full-width,
+        full-size-kana: full-size-kana,
+        inherit: inherit,
+        initial: initial,
+        revert: revert,
+        revert-layer: revert-layer,
+        unset: unset,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

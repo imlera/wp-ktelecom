@@ -1,0 +1,9 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== z-index ========== */
+
+$abb: z-index;
+$att: z-index;
+$ar: [-1, 0, 1, 10, 100, 999];
+
+@include mn.GetClassNames($abb, $att, $ar);

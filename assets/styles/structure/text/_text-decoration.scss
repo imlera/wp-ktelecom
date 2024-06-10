@@ -1,0 +1,14 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== text-decoration ========== */
+
+$abb: text-decoration;
+$att: text-decoration;
+$obj: (
+        overline: overline,
+        underline: underline,
+        line-through: line-through,
+        underline-overline: underline overline,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

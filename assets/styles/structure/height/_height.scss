@@ -1,0 +1,15 @@
+@use ".data" as d;
+@use "../../utils/mixins" as mn;
+
+/* ========== height ========== */
+
+$abb: height;
+$att: height;
+
+@include mn.GetClassNames($abb, $att, d.$obj);
+
+// Массив доп. значений
+$ar: [];
+@if ($ar != []) {
+  @include mn.GetClassNames($abb, $att, $ar)
+}

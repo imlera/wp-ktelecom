@@ -1,0 +1,14 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== flex-direction ========== */
+
+$abb: flex;
+$att: flex-direction;
+$obj: (
+        row: row,
+        row-reverse: row-reverse,
+        column: column,
+        column-reverse: column-reverse,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

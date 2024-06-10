@@ -1,0 +1,70 @@
+@import "width/width";
+@import "width/min-width";
+@import "width/max-width";
+
+@import "height/height";
+@import "height/min-height";
+@import "height/max-height";
+
+@import "margin/margin";
+@import "margin/margin-top";
+@import "margin/margin-bottom";
+@import "margin/margin-left";
+@import "margin/margin-right";
+
+@import "padding/padding";
+@import "padding/padding-top";
+@import "padding/padding-bottom";
+@import "padding/padding-left";
+@import "padding/padding-right";
+
+@import "display/display";
+
+@import "gap/gap";
+
+@import "flex/flex";
+@import "flex/flex-wrap";
+@import "flex/flex-direction";
+
+@import "grid/grid";
+@import "grid/grid-columns";
+
+@import "align/align-self";
+@import "align/align-items";
+@import "align/align-content";
+
+@import "justify/justify-self";
+@import "justify/justify-items";
+@import "justify/justify-content";
+
+@import "cursor/cursor";
+
+@import "color/color";
+
+@import "font/font-size";
+@import "font/font-weight";
+@import "font/font-family";
+
+@import "line-height/line-height";
+
+@import "text/text-align";
+@import "text/text-transform";
+@import "text/text-decoration";
+
+@import "object/object-fit";
+@import "object/object-position";
+
+@import "border/border";
+@import "border/border-style";
+@import "border/border-color";
+@import "border/border-radius";
+
+@import "background-color/background-color";
+
+@import "position/position";
+
+@import "z-index/z-index";
+
+@import "overflow/overflow";
+@import "overflow/overflow-y";
+@import "overflow/overflow-x";

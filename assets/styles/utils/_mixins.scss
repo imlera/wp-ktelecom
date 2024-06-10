@@ -1,0 +1,140 @@
+@use "sass:list";
+@use "sass:math";
+@use "sass:string";
+@use "functions" as fn;
+@use "../configs/media" as media;
+
+/**
+Формирование медиа классов по объекту
+В качестве префикс используются ключи объекта
+
+@var $abb Аббревиатура класса
+@var $att Свойство
+@var $obj Объект префиксов и значений
+ */
+@mixin GetMediaClassNames($abb, $att, $obj) {
+  @each $mk, $mv in media.$obj {
+    @media #{ $mv } {
+      @each $ok, $ov in $obj {
+        .#{ $abb }-#{ $mk }-#{ $ok } {
+          #{ $att }: #{ $ov }
+        }
+      }
+    }
+  }
+}
+
+/**
+Формирование классов по массиву
+В качестве префикса класса используется значение массива
+
+@var $abb Аббревиатура класса
+@var $att Свойство
+@var $vals Массив значений
+ */
+@mixin GetClassNamesByAr($abb, $att, $vals) {
+  $obj: ();
+  @for $vk from 1 through list.length($vals) {
+    $vv: list.nth($vals, $vk);
+    @debug $vv;
+    @if (type-of($vv) == 'number') {
+      $vk: $vv;
+      @if (math.unit($vv) == '%') {
+        $vk: string.slice("#{$vv}", 1, -2);
+        $vk: string.insert($vk, "-per", -1);
+      } @else {
+        $vv: fn.GetToRem($vv);
+      }
+    } @else {
+      $vk: $vv;
+    }
+
+    $obj: list.join($obj, ($vk: $vv));
+
+    .#{ $abb }-#{ $vk } {
+      #{ $att }: $vv
+    }
+  }
+
+  @include GetMediaClassNames($abb, $att, $obj);
+}
+
+/**
+Формирование классов по объекту
+В качестве префикса класса используется ключ объекта
+
+@var $abb Аббревиатура класса
+@var $att Свойство
+@var $vals Объект префиксов и значений
+ */
+@mixin GetClassNamesByObj($abb, $att, $vals) {
+  @each $vk, $vv in $vals {
+    .#{ $abb }-#{ $vk } {
+      #{ $att }: #{ $vv }
+    }
+  }
+
+  @include GetMediaClassNames($abb, $att, $vals);
+}
+
+/**
+Формирование классов по массиву или объекту
+
+@var $abb Аббревиатура класса
+@var $att Свойство
+@var $vals Объект или массив значений
+ */
+@mixin GetClassNames($abb, $att, $vals) {
+  @if (list.is-bracketed($vals)) {
+    @include GetClassNamesByAr($abb, $att, $vals);
+  } @else {
+    @include GetClassNamesByObj($abb, $att, $vals);
+  }
+}
+
+/**
+Формирование класса
+
+@var $abb Аббревиатура класса
+@var $att Свойство
+@var $val Значение
+ */
+@mixin GetClassName($abb, $att, $val) {
+  .#{ $abb } {
+    #{ $att }: $val
+  }
+
+  @each $mk, $mv in media.$obj {
+    @media #{ $mv } {
+      .#{ $abb }-#{ $mk } {
+        #{ $att }: #{ $val }
+      }
+    }
+  }
+}
+
+/**
+Формирование пошаговых классов
+
+@var $abb Аббревиатура класса
+@var $att Свойство
+@var $step Шаг
+@var $from Начальное число
+@var $through Конечное число
+ */
+@mixin GetClassNamesByStep($abb, $att, $step, $from, $through) {
+  $obj: ();
+  $i: $from;
+  @while $i <= $through {
+    $iv: fn.GetToRem($i);
+    $obj: list.append($obj, ($i, $iv));
+
+    .#{ $abb }-#{ $i } {
+      #{ $att }: $iv
+    }
+
+    $i: $i + $step;
+  }
+
+  @include GetMediaClassNames($abb, $att, $obj)
+}

@@ -1,0 +1,20 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== border-radius ========== */
+
+$abb: border-radius;
+$att: border-radius;
+$obj: [2, 5];
+
+@include mn.GetClassNames($abb, $att, $obj);
+
+$obj_abb: (
+        top: (right: $obj, left: $obj),
+        bottom: (right: $obj, left: $obj),
+);
+@each $ok, $ov in $obj_abb {
+  @each $ck, $cv in $ov {
+    $n_abb: border-#{ $ok }-#{ $ck }-radius;
+    @include mn.GetClassNames($n_abb, $att, $obj);
+  }
+}

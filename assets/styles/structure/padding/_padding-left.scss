@@ -1,0 +1,15 @@
+@use ".data" as d;
+@use "../../utils/mixins" as mn;
+
+/* ========== padding-left ========== */
+
+$abb: padding-left;
+$att: padding-left;
+
+@include mn.GetClassNamesByStep($abb, $att, d.$step, d.$from, d.$through);
+
+// Массив доп. значений, не вписывающихся в шаг
+$ar: [];
+@if ($ar != []) {
+  @include mn.GetClassNames($abb, $att, $ar)
+}

@@ -1,0 +1,9 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== grid ========== */
+
+$abb: grid;
+$att: display;
+$val: grid;
+
+@include mn.GetClassName($abb, $att, $val);

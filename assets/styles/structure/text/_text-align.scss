@@ -1,0 +1,17 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== text-align ========== */
+
+$abb: text-align;
+$att: text-align;
+$obj: (
+        none: none,
+        revert: revert,
+        overline: overline,
+        unset: unset,
+        initial: initial,
+        inherit: inherit,
+        underline: underline,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

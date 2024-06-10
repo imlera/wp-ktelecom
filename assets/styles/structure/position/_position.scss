@@ -1,0 +1,15 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== position ========== */
+
+$abb: position;
+$att: position;
+$obj: (
+        fixed: fixed,
+        relative: relative,
+        sticky: sticky,
+        static: static,
+        absolute: absolute,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

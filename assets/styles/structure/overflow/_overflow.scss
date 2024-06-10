@@ -1,0 +1,9 @@
+@use ".data" as d;
+@use "../../utils/mixins" as mn;
+
+/* ========== overflow ========== */
+
+$abb: overflow;
+$att: overflow;
+
+@include mn.GetClassNames($abb, $att, d.$obj);

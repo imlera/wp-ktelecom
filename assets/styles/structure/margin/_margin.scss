@@ -1,0 +1,14 @@
+@use ".data" as d;
+@use "../../utils/mixins" as mn;
+
+/* ========== margin ========== */
+
+$abb: margin;
+$att: margin;
+
+@include mn.GetClassNamesByStep($abb, $att, d.$step, d.$from, d.$through);
+
+// Массив доп. значений, не вписывающихся в шаг
+@if (d.$ar != []) {
+  @include mn.GetClassNames($abb, $att, d.$ar)
+}

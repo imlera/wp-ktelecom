@@ -1,0 +1,35 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== object-position ========== */
+
+$abb: object-position;
+$att: object-position;
+$obj: (
+        top: top,
+        top-left: top left,
+        top-right: top right,
+        top-center: top center,
+
+        left: left,
+        left-top: left top,
+        left-center: left center,
+        left-bottom: left bottom,
+
+        right: right,
+        right-top: right top,
+        right-center: right center,
+        right-bottom: right bottom,
+
+        center: center,
+        center-top: center top,
+        center-left: center left,
+        center-right: center right,
+        center-bottom: center bottom,
+
+        bottom: bottom,
+        bottom-left: bottom left,
+        bottom-right: bottom right,
+        bottom-center: bottom center,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

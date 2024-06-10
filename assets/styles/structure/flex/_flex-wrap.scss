@@ -1,0 +1,13 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== flex-wrap ========== */
+
+$abb: flex;
+$att: flex-wrap;
+$obj: (
+        wrap: wrap,
+        nowrap: nowrap,
+        wrap-reverse: wrap-reverse,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

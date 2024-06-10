@@ -1,0 +1,46 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== cursor ========== */
+
+$abb: cursor;
+$att: cursor;
+$obj: (
+        auto: auto,
+        alias: alias,
+        all-scroll: all-scroll,
+        e-resize: e-resize,
+        ew-resize: ew-resize,
+        none: none,
+        no-drop: no-drop,
+        not-allowed: not-allowed,
+        n-resize: n-resize,
+        ne-resize: ne-resize,
+        nw-resize: nw-resize,
+        ns-resize: ns-resize,
+        nesw-resize: nesw-resize,
+        nwse-resize: nwse-resize,
+        pointer: pointer,
+        progress: progress,
+        cell: cell,
+        copy: copy,
+        context-menu: context-menu,
+        crosshair: crosshair,
+        col-resize: col-resize,
+        s-resize: s-resize,
+        se-resize: se-resize,
+        sw-resize: sw-resize,
+        grab: grab,
+        grabbing: grabbing,
+        wait: wait,
+        w-resize: w-resize,
+        zoom-in: zoom-in,
+        zoom-out: zoom-out,
+        help: help,
+        move: move,
+        text: text,
+        default: default,
+        row-resize: row-resize,
+        vertical-text: vertical-text,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);

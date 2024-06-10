@@ -1,0 +1,9 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== line-height ========== */
+
+$abb: line-height;
+$att: line-height;
+$ar: [100%];
+
+@include mn.GetClassNames($abb, $att, $ar);

@@ -1,0 +1,9 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== flex ========== */
+
+$abb: flex;
+$att: display;
+$val: flex;
+
+@include mn.GetClassName($abb, $att, $val);

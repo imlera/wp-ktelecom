@@ -1,0 +1,9 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== font-weight ========== */
+
+$abb: font-weight;
+$att: font-weight;
+$ar: [400, 500, 600, 700, 800, 900];
+
+@include mn.GetClassNames($abb, $att, $ar);

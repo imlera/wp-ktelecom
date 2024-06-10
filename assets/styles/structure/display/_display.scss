@@ -1,0 +1,33 @@
+@use "../../utils/mixins" as mn;
+
+/* ========== display ========== */
+
+$abb: display;
+$att: display;
+$obj: (
+        none: none,
+        block: block,
+        flex: flex,
+        inline-flex: inline-flex,
+        inline: inline,
+        inline-block: inline-block,
+        list-item: list-item,
+        run-in: run-in,
+        compact: compact,
+        table: table,
+        inline-table: inline-table,
+        table-caption: table-caption,
+        table-column: table-column,
+        table-column-group: table-column-group,
+        table-header-group: table-header-group,
+        table-footer-group: table-footer-group,
+        table-row: table-row,
+        table-row-group: table-row-group,
+        table-cell: table-cell,
+        ruby: ruby,
+        ruby-base: ruby-base,
+        ruby-text: ruby-text,
+        ruby-base-container: ruby-base-container,
+);
+
+@include mn.GetClassNames($abb, $att, $obj);
