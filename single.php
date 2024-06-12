@@ -1,4 +1,11 @@
 <?php
+/**
+ * Шаблон для отображения всех отдельных записей
+ *
+ * @package WordPress
+ * @subpackage K-Telecom
+ * @since K-Telecom 1.0
+ */
 
 get_header();
 

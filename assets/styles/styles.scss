@@ -20,6 +20,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
+  font-family: var(--wp--preset--font-family--cera-round-pro), serif;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
@@ -43,7 +44,9 @@ pre {
 }
 
 a {
-  background-color: rgba(0, 0, 0, 0)
+  color: var(--wp--preset--color--black);
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 abbr[title] {

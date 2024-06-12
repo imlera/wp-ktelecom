@@ -6,4 +6,4 @@ $abb: z-index;
 $att: z-index;
 $ar: [-1, 0, 1, 10, 100, 999];
 
-@include mn.GetClassNames($abb, $att, $ar);
+@include mn.GetClassNames($abb, $att, $ar, false);

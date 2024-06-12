@@ -1,8 +1,11 @@
 <?php
 /**
  * Функции и определения
+ *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
- * @package K-Telecom
+ * @package WordPress
+ * @subpackage K-Telecom
+ * @since K-Telecom 1.0
  */
 
 use JetBrains\PhpStorm\NoReturn;
@@ -45,6 +48,12 @@ endif;
 
 add_action( 'after_setup_theme', 'ktelecom_setup' );
 
+if ( ! function_exists( 'ktelecom_display_translate_text' ) ):
+	#[NoReturn] function ktelecom_display_translate_text( string $text ): void {
+		_e( $text, wp_get_theme()->get( 'TextDomain' ) );
+	}
+endif;
+
 #region Include scripts and styles
 if ( ! function_exists( 'ktelecom_scripts' ) ):
 	#[NoReturn] function ktelecom_scripts(): void {
@@ -52,8 +61,8 @@ if ( ! function_exists( 'ktelecom_scripts' ) ):
 		$theme_domain  = $theme->get( 'TextDomain' );
 		$theme_version = $theme->get( 'Version' );
 
-		wp_enqueue_script( 'owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', ['jquery'], '2.3.4', true );
-		wp_enqueue_script( "$theme_domain-script", ktelecom_get_script_uri('script.js'), ['jquery'], $theme_version, true );
+		wp_enqueue_script( 'owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', [ 'jquery' ], '2.3.4', true );
+		wp_enqueue_script( "$theme_domain-script", ktelecom_get_script_uri( 'script.js' ), [ 'jquery' ], $theme_version, true );
 	}
 endif;
 
@@ -65,21 +74,22 @@ if ( ! function_exists( 'ktelecom_styles' ) ):
 		$theme_domain  = $theme->get( 'TextDomain' );
 		$theme_version = $theme->get( 'Version' );
 
-		wp_enqueue_style("$theme_version-style", get_stylesheet_uri(), [], $theme_version);
-		wp_style_add_data("$theme_version-style", 'rtl', 'replace');
+		wp_enqueue_style( "$theme_version-style", get_stylesheet_uri(), [], $theme_version );
+		wp_style_add_data( "$theme_version-style", 'rtl', 'replace' );
 
-		if ( is_singular() && comments_open() && get_option('thread_comments') )
-			wp_enqueue_script('comment-reply');
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ):
+			wp_enqueue_script( 'comment-reply' );
+		endif;
 
-		wp_enqueue_style('owl-carousel', "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css", [], 'all');
-		wp_enqueue_style("$theme_domain-blocks", ktelecom_get_style_uri('styles.css'), [], 'all');
-		wp_enqueue_style("$theme_domain-structure", ktelecom_get_style_uri('structure/structure.css'), [], 'all');
-		wp_enqueue_style("$theme_domain-blocks", ktelecom_get_style_uri('blocks.css'), [], 'all');
+		wp_enqueue_style( 'owl-carousel', "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css", [], '2.3.4', 'all' );
+		wp_enqueue_style( "$theme_domain-style", ktelecom_get_style_uri( 'styles.css' ), [], $theme_version, 'all' );
+		wp_enqueue_style( "$theme_domain-structure", ktelecom_get_style_uri( 'structure/structure.css' ), [], $theme_version, 'all' );
+		wp_enqueue_style( "$theme_domain-blocks", ktelecom_get_style_uri( 'blocks.css' ), [], $theme_version, 'all' );
 	}
 endif;
 
 add_action( 'wp_enqueue_scripts', 'ktelecom_styles' );
-#endregin
+#endregion
 
 #region Getter assets URI
 if ( ! function_exists( 'ktelecom_get_assets_uri' ) ):

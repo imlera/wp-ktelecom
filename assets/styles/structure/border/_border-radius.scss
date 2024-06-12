@@ -14,7 +14,8 @@ $obj_abb: (
 );
 @each $ok, $ov in $obj_abb {
   @each $ck, $cv in $ov {
-    $n_abb: border-#{ $ok }-#{ $ck }-radius;
-    @include mn.GetClassNames($n_abb, $att, $obj);
+    $abb: border-#{ $ok }-#{ $ck }-radius;
+    $att: border-#{ $ok }-#{ $ck }-radius;
+    @include mn.GetClassNames($abb, $att, $obj);
   }
 }

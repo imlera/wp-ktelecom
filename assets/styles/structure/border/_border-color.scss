@@ -10,6 +10,7 @@ $att: border-color;
 
 $ar_abb: [top, bottom, left, right];
 @each $arv in $ar_abb {
-  $arv: border-#{ $arv };
-  @include mn.GetClassNames($arv, $att, d.$obj);
+  $abb: border-#{ $arv };
+  $att: border-#{ $arv }-color;
+  @include mn.GetClassNames($abb, $att, d.$obj);
 }

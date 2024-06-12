@@ -1,0 +1,15 @@
+@use "utils/functions" as fn;
+@use "configs/media" as ma;
+
+#main-screen .content {
+  &__image {
+    max-width: fn.GetToRem(436);
+    max-height: fn.GetToRem(314);
+    right: 0;
+    top: fn.GetToRem(-20);
+
+    @media #{ map-get(ma.$obj, 'm') } {
+      order: -1;
+    }
+  }
+}

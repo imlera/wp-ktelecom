@@ -1,1 +1,10 @@
-$obj: ();
+$obj: (
+        white: var(--wp--preset--color--white),
+        pink: var(--wp--preset--color--pink),
+        blue: var(--wp--preset--color--blue),
+        black: var(--wp--preset--color--black),
+        cultured: var(--wp--preset--color--cultured),
+        silver: var(--wp--preset--color--silver),
+        gray: var(--wp--preset--color--gray),
+        tag-silver: var(--wp--preset--color--tag-silver),
+);

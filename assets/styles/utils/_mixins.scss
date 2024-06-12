@@ -17,7 +17,7 @@
     @media #{ $mv } {
       @each $ok, $ov in $obj {
         .#{ $abb }-#{ $mk }-#{ $ok } {
-          #{ $att }: #{ $ov }
+          #{ $att }: #{ $ov }!important
         }
       }
     }
@@ -31,13 +31,14 @@
 @var $abb Аббревиатура класса
 @var $att Свойство
 @var $vals Массив значений
+@var $unit Обрабатывать единицы измерения
  */
-@mixin GetClassNamesByAr($abb, $att, $vals) {
+@mixin GetClassNamesByAr($abb, $att, $vals, $unit: true) {
   $obj: ();
   @for $vk from 1 through list.length($vals) {
     $vv: list.nth($vals, $vk);
     @debug $vv;
-    @if (type-of($vv) == 'number') {
+    @if ($unit != false and type-of($vv) == 'number') {
       $vk: $vv;
       @if (math.unit($vv) == '%') {
         $vk: string.slice("#{$vv}", 1, -2);
@@ -50,13 +51,9 @@
     }
 
     $obj: list.join($obj, ($vk: $vv));
-
-    .#{ $abb }-#{ $vk } {
-      #{ $att }: $vv
-    }
   }
 
-  @include GetMediaClassNames($abb, $att, $obj);
+  @include GetClassNamesByObj($abb, $att, $obj);
 }
 
 /**
@@ -83,10 +80,11 @@
 @var $abb Аббревиатура класса
 @var $att Свойство
 @var $vals Объект или массив значений
+@var $unit Обрабатывать единицы измерения
  */
-@mixin GetClassNames($abb, $att, $vals) {
+@mixin GetClassNames($abb, $att, $vals, $unit: true) {
   @if (list.is-bracketed($vals)) {
-    @include GetClassNamesByAr($abb, $att, $vals);
+    @include GetClassNamesByAr($abb, $att, $vals, $unit);
   } @else {
     @include GetClassNamesByObj($abb, $att, $vals);
   }
@@ -128,13 +126,8 @@
   @while $i <= $through {
     $iv: fn.GetToRem($i);
     $obj: list.append($obj, ($i, $iv));
-
-    .#{ $abb }-#{ $i } {
-      #{ $att }: $iv
-    }
-
     $i: $i + $step;
   }
 
-  @include GetMediaClassNames($abb, $att, $obj)
+  @include GetClassNamesByObj($abb, $att, $obj);
 }

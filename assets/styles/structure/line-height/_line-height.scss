@@ -4,6 +4,14 @@
 
 $abb: line-height;
 $att: line-height;
-$ar: [100%];
 
-@include mn.GetClassNames($abb, $att, $ar);
+$step: 2;
+$from: 0;
+$through: 100;
+@include mn.GetClassNamesByStep($abb, $att, $step, $from, $through);
+
+// Массив доп. значений, не вписывающихся в шаг
+$ar: [100%, 45, 21];
+@if ($ar != []) {
+  @include mn.GetClassNames($abb, $att, $ar)
+}

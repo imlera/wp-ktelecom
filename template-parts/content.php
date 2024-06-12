@@ -1,8 +1,10 @@
 <?php
 /**
  * Часть шаблона для отображения записей
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- * @package K-Telecom
+ *
+ * @package WordPress
+ * @subpackage K-Telecom
+ * @since K-Telecom 1.0
  */
 ?>
 

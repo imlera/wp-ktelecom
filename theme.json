@@ -1,0 +1,167 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 1,
+  "patterns": [
+    "three-columns-of-services",
+    "clients-section"
+  ],
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "shadow": {
+      "defaultPresets": true,
+      "presets": [
+        {
+          "name": "Тариф",
+          "slug": "rate",
+          "shadow": "0 12px 25px 0 #5A5A5A1F"
+        }
+      ]
+    },
+    "color": {
+      "defaultDuotone": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "duotone": [],
+      "gradients": [],
+      "palette": [
+        {
+          "color": "#FFF",
+          "name": "White",
+          "slug": "white"
+        },
+        {
+          "color": "#C81059",
+          "name": "Pictorial Carmine",
+          "slug": "pink"
+        },
+        {
+          "color": "#0099C8",
+          "name": "Rich Electric Blue",
+          "slug": "blue"
+        },
+        {
+          "color": "#2D2D2D",
+          "name": "Charleston Green",
+          "slug": "black"
+        },
+        {
+          "color": "#F2F6F8",
+          "name": "Cultured",
+          "slug": "cultured"
+        },
+        {
+          "color": "#C2C2C2",
+          "name": "Silver Sand",
+          "slug": "silver"
+        },
+        {
+          "color": "#555555",
+          "name": "Davy's Grey",
+          "slug": "gray"
+        },
+        {
+          "color": "#ACACAC",
+          "name": "Silver Chalice",
+          "slug": "tag-silver"
+        }
+      ]
+    },
+    "layout": {
+      "wideSize": "62.5rem",
+      "contentSize": "50rem"
+    },
+    "spacing": {
+      "spacingScale": {
+        "steps": 0
+      },
+      "spacingSizes": [],
+      "units": [
+        "%",
+        "px",
+        "em",
+        "rem",
+        "vh",
+        "vw"
+      ]
+    },
+    "typography": {
+      "fluid": true,
+      "writingMode": true,
+      "fontFamilies": [
+        {
+          "name": "System Serif",
+          "slug": "system-serif",
+          "fontFamily": "Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol"
+        },
+        {
+          "name": "System Sans-serif",
+          "slug": "system-sans-serif",
+          "fontFamily": "-apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif"
+        },
+        {
+          "name": "Open Sans",
+          "slug": "open-sans",
+          "fontFamily": "\"Open Sans\", sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Open Sans",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "fontStretch": "normal",
+              "fontWeight": "300 900",
+              "src": [
+                "file:./assets/fonts/OpenSans/opensans-regular.woff",
+                "file:./assets/fonts/OpenSans/opensans-regular.woff2"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cera Round Pro",
+          "slug": "cera-round-pro",
+          "fontFamily": "\"Cera Round Pro\", sans-serif",
+          "fontFace": [
+            {
+              "fontFamily": "Cera Round Pro",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "fontStretch": "normal",
+              "fontWeight": "100 400",
+              "src": [
+                "file:./assets/fonts/CeraRoundPro/ceraroundpro-regular.woff",
+                "file:./assets/fonts/CeraRoundPro/ceraroundpro-regular.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Cera Round Pro",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "fontStretch": "normal",
+              "fontWeight": "500 600",
+              "src": [
+                "file:./assets/fonts/CeraRoundPro/ceraroundpro-medium.woff",
+                "file:./assets/fonts/CeraRoundPro/ceraroundpro-medium.woff2"
+              ]
+            },
+            {
+              "fontFamily": "Cera Round Pro",
+              "fontStyle": "normal",
+              "fontDisplay": "swap",
+              "fontStretch": "normal",
+              "fontWeight": "700 900",
+              "src": [
+                "file:./assets/fonts/CeraRoundPro/ceraroundpro-bold.woff",
+                "file:./assets/fonts/CeraRoundPro/ceraroundpro-bold.woff2"
+              ]
+            }
+          ]
+        }
+      ],
+      "fontSizes": []
+    }
+  },
+  "styles": {},
+  "templateParts": [],
+  "customTemplates": []
+}

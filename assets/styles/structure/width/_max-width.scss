@@ -9,7 +9,7 @@ $att: max-width;
 @include mn.GetClassNames($abb, $att, d.$obj);
 
 // Массив доп. значений
-$ar: [];
+$ar: [200, 400, 500];
 @if ($ar != []) {
   @include mn.GetClassNames($abb, $att, $ar)
 }

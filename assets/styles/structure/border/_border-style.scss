@@ -26,6 +26,7 @@ $obj: (
 
 $ar_abb: [top, bottom, left, right];
 @each $arv in $ar_abb {
-  $arv: border-#{ $arv };
-  @include mn.GetClassNames($arv, $att, $obj);
+  $abb: border-#{ $arv };
+  $att: border-#{ $arv }-style;
+  @include mn.GetClassNames($abb, $att, $obj);
 }

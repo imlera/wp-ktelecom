@@ -1,4 +1,12 @@
 <?php
+/**
+ * Шаблон для отображения всех страниц
+ * Это шаблон, который отображает все страницы по умолчанию.
+ *
+ * @package WordPress
+ * @subpackage K-Telecom
+ * @since K-Telecom 1.0
+ */
 
 get_header();
 
