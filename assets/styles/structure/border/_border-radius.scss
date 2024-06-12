@@ -4,7 +4,7 @@
 
 $abb: border-radius;
 $att: border-radius;
-$obj: [2, 5];
+$obj: [2, 5, 10, 20];
 
 @include mn.GetClassNames($abb, $att, $obj);
 

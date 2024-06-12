@@ -34,7 +34,7 @@ $ar_data = [
 ?>
 
 <div id="main-screen"
-     class="padding-left-50 padding-left-l-10 padding-right-50 padding-right-l-10 grid grid-columns-container justify-content-center align-items-center background-color-cultured">
+     class="padding-left-50 padding-left-m-10 padding-right-50 padding-right-m-10 grid grid-columns-container justify-content-center align-items-center background-color-cultured">
     <div class="content padding-top-84 padding-top-m-12 padding-bottom-88 padding-bottom-m-12">
         <div class="position-relative flex flex-m-column gap-10">
             <div class="width-full max-width-500 flex flex-column gap-30 gap-m-20 position-relative z-index-1">
@@ -46,9 +46,9 @@ $ar_data = [
 					<?php endif; ?>
 
 					<?php if ( $ar_data['list'] ): ?>
-                        <div class="content__list padding-left-10 padding-left-m-8 flex flex-column gap-4">
+                        <div class="padding-left-10 padding-left-m-8 flex flex-column gap-4">
 							<?php foreach ( $ar_data['list'] as $datum ): ?>
-                                <p class="content__list__item flex gap-10 gap-m-8 font-family-open-sans font-size-16 font-size-m-12 line-height-32 line-height-m-24 color-gray">
+                                <p class="flex gap-10 gap-m-8 font-family-open-sans font-size-16 font-size-m-12 line-height-32 line-height-m-24 color-gray">
                                     <span>&#x2022;</span>
                                     <span><?= $datum ?></span>
                                 </p>

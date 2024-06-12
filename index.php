@@ -11,11 +11,11 @@
 get_header();
 ?>
 
-	<main id="main" class="flex flex-column">
+    <main id="main" class="flex flex-column">
 		<?php get_template_part('patterns/main-screen'); ?>
 		<?php get_template_part('patterns/rates-slider'); ?>
 		<?php get_template_part('patterns/rates-form'); ?>
-	</main>
+    </main>
 
 <?php
 get_footer();

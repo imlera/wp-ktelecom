@@ -1,15 +1,144 @@
 @use "utils/functions" as fn;
 @use "configs/media" as ma;
 
-#main-screen .content {
-  &__image {
-    max-width: fn.GetToRem(436);
-    max-height: fn.GetToRem(314);
-    right: 0;
-    top: fn.GetToRem(-20);
+#main-screen .content__image {
+  max-width: fn.GetToRem(436);
+  max-height: fn.GetToRem(314);
+  right: 0;
+  top: fn.GetToRem(-20);
 
-    @media #{ map-get(ma.$obj, 'm') } {
-      order: -1;
+  @media #{ map-get(ma.$obj, 'm') } {
+    top: 0;
+    order: -1;
+  }
+}
+
+#rates .items {
+  .owl-stage-outer {
+    overflow: visible;
+
+    .owl-stage {
+      display: flex;
+
+      .owl-item {
+        display: flex;
+        min-height: 100%;
+        transition: filter .3s ease-out;
+
+        &:not(.active) {
+          filter: opacity(.3);
+        }
+      }
+    }
+  }
+
+  padding-right: fn.GetToRem(208);
+
+  @media #{ map-get(ma.$obj, 'l') } {
+    padding-right: fn.GetToRem(90);
+  }
+
+  .item {
+    box-shadow: var(--wp--preset--shadow--rate);
+
+    &__extra {
+      input {
+        &:checked + div {
+          border-color: var(--wp--preset--color--blue);
+          background-color: var(--wp--preset--color--blue);
+
+          &::before {
+            filter: opacity(1);
+          }
+        }
+      }
+
+      input + div {
+        transition: border-color .3s ease-out, background-color .3s ease-out;
+
+        &::before {
+          content: url(./../images/icons/checked.svg);
+          display: block;
+          filter: opacity(0);
+          transition: filter .3s ease-out;
+        }
+      }
+    }
+
+    &__price {
+      &__opacity {
+        filter: opacity(.5);
+      }
+    }
+
+    &__btn {
+      span:last-of-type {
+        display: none;
+      }
+
+      &:has( input:checked ) span {
+        &:first-of-type {
+          display: none;
+        }
+
+        &:last-of-type {
+          display: flex;
+        }
+      }
+
+      @media #{ map-get(ma.$obj, 'm') } {
+        max-width: calc(100% - 1.25rem);
+      }
+    }
+  }
+}
+
+#rates-form .form {
+  &__types label {
+    transition: color .3s ease-out, border-color .3s ease-out;
+
+    &:has( input:checked ) {
+      color: var(--wp--preset--color--blue);
+      border-color: var(--wp--preset--color--blue);
+    }
+  }
+
+  &__fields label {
+    &:nth-child(1) {
+      flex-shrink: 2;
+    }
+
+    &:nth-child(2) {
+      flex-shrink: 1;
+    }
+
+    input::placeholder {
+      color: var(--wp--preset--color--silver);
+      font: normal 400 fn.GetToRem(12)/fn.GetToRem(18) var(--wp--preset--font-family--system-sans-serif);
+    }
+  }
+
+  &__legally {
+    input {
+      &:checked + div {
+        border-color: var(--wp--preset--color--blue);
+        background-color: var(--wp--preset--color--blue);
+
+        &::before {
+          filter: opacity(1);
+        }
+      }
+    }
+
+    input + div {
+      transition: border-color .3s ease-out, background-color .3s ease-out;
+
+      &::before {
+        content: url(./../images/icons/checked.svg);
+        display: block;
+        filter: opacity(0);
+        transition: filter .3s ease-out;
+      }
     }
   }
 }

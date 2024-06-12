@@ -8,6 +8,6 @@
  */
 ?>
 
-<main class="main post-main flex flex-column">
+<main class="padding-left-50 padding-left-m-10 padding-right-50 padding-right-m-10 grid grid-columns-container justify-content-center">
 	<?php the_content(); ?>
 </main>

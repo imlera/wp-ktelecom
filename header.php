@@ -8,6 +8,7 @@
  * @since K-Telecom 1.0
  */
 
+$title = get_the_title();
 $ar_wrapper_classnames = [ 'wrapper' ];
 if ( is_page() ) $ar_wrapper_classnames[] = 'page';
 if ( is_single() ) $ar_wrapper_classnames[] = 'post';
@@ -20,12 +21,12 @@ if ( is_single() ) $ar_wrapper_classnames[] = 'post';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title><?php wp_title( '|', true, 'right' ); ?> <?= get_bloginfo(); ?></title>
+    <title><?= $title ? "$title | " : null ?> <?= get_bloginfo(); ?></title>
 
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <div id="wrapper"
-         class="<?= join(' ', $ar_wrapper_classnames) ?> min-width-full min-height-full flex flex-column">
-        <?php get_template_part('parts/header'); ?>
+<?php wp_body_open(); ?>
+<div id="wrapper"
+     class="<?= join(' ', $ar_wrapper_classnames) ?> min-width-full min-height-full flex flex-column">
+	<?php get_template_part('parts/header'); ?>

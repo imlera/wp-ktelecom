@@ -9,7 +9,7 @@ $att: padding-right;
 @include mn.GetClassNamesByStep($abb, $att, d.$step, d.$from, d.$through);
 
 // Массив доп. значений, не вписывающихся в шаг
-$ar: [];
+$ar: [5];
 @if ($ar != []) {
   @include mn.GetClassNames($abb, $att, $ar)
 }

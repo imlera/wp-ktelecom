@@ -64,6 +64,11 @@
           "color": "#ACACAC",
           "name": "Silver Chalice",
           "slug": "tag-silver"
+        },
+        {
+          "color": "#989898",
+          "name": "Spanish Gray",
+          "slug": "spanish-gray"
         }
       ]
     },

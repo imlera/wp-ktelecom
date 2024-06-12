@@ -8,8 +8,6 @@ $att: width;
 
 @include mn.GetClassNames($abb, $att, d.$obj);
 
-// Массив доп. значений
-$ar: [];
-@if ($ar != []) {
-  @include mn.GetClassNames($abb, $att, $ar)
+@if (d.$ar != []) {
+  @include mn.GetClassNames($abb, $att, d.$ar)
 }

@@ -12,7 +12,7 @@ $through: 100;
 @include mn.GetClassNamesByStep($abb, $att, $step, $from, $through);
 
 // Массив доп. значений, не вписывающихся в шаг
-$ar: [];
+$ar: [5];
 @if ($ar != []) {
   @include mn.GetClassNames($abb, $att, $ar)
 }

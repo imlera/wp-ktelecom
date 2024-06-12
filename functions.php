@@ -62,7 +62,7 @@ if ( ! function_exists( 'ktelecom_scripts' ) ):
 		$theme_version = $theme->get( 'Version' );
 
 		wp_enqueue_script( 'owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js', [ 'jquery' ], '2.3.4', true );
-		wp_enqueue_script( "$theme_domain-script", ktelecom_get_script_uri( 'script.js' ), [ 'jquery' ], $theme_version, true );
+		wp_enqueue_script( "$theme_domain-script", ktelecom_get_script_uri( 'script.min.js' ), [ 'jquery' ], $theme_version, true );
 	}
 endif;
 
